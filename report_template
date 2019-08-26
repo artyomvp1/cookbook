@@ -1,4 +1,4 @@
-SELECT s.sale_id,
+SELECT s.sale_id "ID",
        s.sales_date ,
        c.first_name || ' ' || c.last_name "CUSTOMER_NAME",
        p.product ,
