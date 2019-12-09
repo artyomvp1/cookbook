@@ -1,0 +1,64 @@
+DECLARE
+    v_num_of_rentals NUMBER ;
+    v_rental_raiting VARCHAR2(10) ;
+    
+BEGIN
+    IF v_num_of_rentals < 5 THEN
+        v_rental_raiting := 'Dump' ;
+    ELSIF v_num_of_rentals BETWEEN 5 AND 20 THEN
+        v_rental_raiting := 'Low' ;
+    ELSIF v_num_of_rentals BETWEEN 21 AND 35 THEN
+        v_rental_raiting := 'Mid' ;
+    ELSIF v_num_of_rentals > 35 THEN
+        v_rental_raiting := 'High' ;  
+    END IF ;
+    
+END ;
+/
+
+DECLARE
+    v_title mm_movie.movie_title%TYPE ;
+    v_count NUMBER ;
+    v_raiting VARCHAR2(10) ;
+    v_id NUMBER := 3;
+    
+BEGIN
+    SELECT m.movie_title,
+           COUNT(r.movie_id)
+    INTO v_title, v_count
+    FROM mm_movie m
+    INNER JOIN mm_rental r ON r.movie_id = m.movie_id 
+    WHERE m.movie_id = v_id 
+    GROUP BY m.movie_title ;
+    --
+    IF v_count > 5 THEN
+        v_raiting := 'Dump' ;
+    ELSIF v_count BETWEEN 5 AND 20 THEN
+        v_raiting := 'Low' ;
+    ELSIF v_count BETWEEN 21 AND 35 THEN
+        v_raiting := 'Mid' ;
+    ELSIF v_count > 35 THEN
+        v_raiting := 'High' ;
+    END IF ;
+    --
+    DBMS_OUTPUT.PUT_LINE('Title : ' || v_title) ;
+    DBMS_OUTPUT.PUT_LINE('Rental Count : ' || v_count) ;
+    DBMS_OUTPUT.PUT_LINE('Raiting : ' || v_raiting) ;
+    
+END ;
+/
+
+DECLARE
+    
+BEGIN
+    FOR v_cur IN (SELECT *
+                  FROM mm_movie)
+    LOOP
+        IF v_cur.movie_value > 75 THEN
+            UPDATE mm_movie
+            SET stk_flag = '*' 
+            WHERE movie_id = v_cur.movie_id ;
+        END IF ;
+    END LOOP ;
+    
+END ;
