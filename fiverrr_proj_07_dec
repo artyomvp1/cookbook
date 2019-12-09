@@ -1,0 +1,130 @@
+CREATE OR REPLACE PROCEDURE movie_rent_sp (v_member_id IN NUMBER, v_movie_id IN NUMBER, v_method IN NUMBER)
+AS
+    
+BEGIN
+    INSERT INTO mm_rental (rental_id, member_id, movie_id, checkout_date, checkin_date, payment_methods_id)
+        VALUES(mm_rental_seq.NEXTVAL, v_member_id, v_movie_id, SYSDATE, NULL, v_method) ;
+    --
+    UPDATE mm_movie
+    SET movie_qty = movie_qty + 1 
+    WHERE movie_id = v_movie_id ;
+    --
+    COMMIT ;
+END ;
+
+EXEC movie_rentals(10, 1, 2) ;
+
+-------------------------------------------
+
+CREATE OR REPLACE PROCEDURE movie_return_sp (v_member_id IN NUMBER, v_movie_id IN NUMBER)
+AS
+
+BEGIN
+    INSERT INTO mm_rental (rental_id, member_id, movie_id, checkout_date, checkin_date, payment_methods_id)
+        VALUES(mm_rental_seq.NEXTVAL, v_member_id, v_movie_id, NULL, SYSDATE, NULL ) ;
+    --
+    UPDATE mm_movie
+    SET movie_qty = movie_qty - 1 
+    WHERE movie_id = v_movie_id ;
+    --
+    COMMIT ;
+    
+END ;
+
+------------------------------------------------------------
+CREATE OR REPLACE FUNCTION movie_info(v_movie_id IN NUMBER)
+    RETURN NUMBER 
+
+AS
+    v_qty_count NUMBER ;
+    
+BEGIN
+    SELECT movie_qty
+    INTO v_qty_count
+    FROM mm_movie
+    WHERE movie_id = v_movie_id ;
+    RETURN v_qty_count ;
+    
+END ;
+
+SELECT movie_qty_count(1) FROM DUAL ;
+
+------------------------------------------------------------------
+CREATE OR REPLACE PACKAGE mm_rentals_pkg
+AS
+    PROCEDURE movie_rent_sp (v_member_id IN NUMBER, v_movie_id IN NUMBER, v_method IN NUMBER) ;
+    PROCEDURE movie_return_sp (v_member_id IN NUMBER, v_movie_id IN NUMBER) ;
+    FUNCTION movie_info(v_movie_id IN NUMBER) RETURN NUMBER ;
+    
+END ;
+--
+
+CREATE OR REPLACE PACKAGE BODY mm_rentals_pkg
+AS
+    /*1st procedure */
+    PROCEDURE movie_rent_sp (v_member_id IN NUMBER, v_movie_id IN NUMBER, v_method IN NUMBER)
+    AS
+        
+    BEGIN
+        INSERT INTO mm_rental (rental_id, member_id, movie_id, checkout_date, checkin_date, payment_methods_id)
+            VALUES(mm_rental_seq.NEXTVAL, v_member_id, v_movie_id, SYSDATE, NULL, v_method) ;
+        --
+        UPDATE mm_movie
+        SET movie_qty = movie_qty + 1 
+        WHERE movie_id = v_movie_id ;
+        --
+        COMMIT ;
+    END ;
+    
+    /*2nd procedure */
+    PROCEDURE movie_return_sp (v_member_id IN NUMBER, v_movie_id IN NUMBER)
+    AS
+    
+    BEGIN
+        INSERT INTO mm_rental (rental_id, member_id, movie_id, checkout_date, checkin_date, payment_methods_id)
+            VALUES(mm_rental_seq.NEXTVAL, v_member_id, v_movie_id, NULL, SYSDATE, NULL ) ;
+        --
+        UPDATE mm_movie
+        SET movie_qty = movie_qty - 1 
+        WHERE movie_id = v_movie_id ;
+        --
+        COMMIT ;
+        
+    END ;
+    
+    /*Function*/
+    FUNCTION movie_info(v_movie_id IN NUMBER)
+    RETURN NUMBER 
+
+    AS
+        v_qty_count NUMBER ;
+        
+    BEGIN
+        SELECT movie_qty
+        INTO v_qty_count
+        FROM mm_movie
+        WHERE movie_id = v_movie_id ;
+        RETURN v_qty_count ;
+        
+    END ;
+END ;
+
+-------------------------------------------------------------
+CREATE OR REPLACE TRIGGER mm_rent_trg
+    AFTER INSERT
+    ON mm_rental
+DECLARE
+    v_last_movie_id NUMBER ;
+    
+BEGIN
+    SELECT movie_id 
+    INTO v_last_movie_id
+    FROM mm_rental
+    WHERE rental_id  = ( SELECT MAX(rental_id)
+                         FROM mm_rental) ;
+    --
+    UPDATE mm_movie
+    SET movie_qty = movie_qty + 1 
+    WHERE movie_id = v_last_movie_id ;
+    
+END ;
