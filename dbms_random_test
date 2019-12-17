@@ -8,21 +8,13 @@ BEGIN
     
     FOR i IN 1 .. 10000000
     LOOP
-        v_collection.EXTEND ;
-        SELECT DBMS_RANDOM.VALUE(1, 10)
-        BULK COLLECT INTO v_collection
-        FROM DUAL ;
-    END LOOP ;
-    
-    /*FOR i IN 1 .. 10000000
-    LOOP
         SELECT DBMS_RANDOM.VALUE(1, 10)
         INTO v_number 
         FROM DUAL ;
         
         v_collection.EXTEND ;
         v_collection(i) := v_number ;
-    END LOOP ;*/
+    END LOOP ;
     
     FORALL j IN v_collection.FIRST .. v_collection.LAST
         INSERT INTO test_random(random_number)
