@@ -1,0 +1,33 @@
+DECLARE
+    TYPE c_type IS TABLE OF test_random.random_number%TYPE ;
+    v_collection c_type := c_type() ;
+    v_number test_random.random_NUMBER%TYPE ;
+    
+BEGIN
+    EXECUTE IMMEDIATE 'TRUNCATE TABLE test_random' ;
+    
+    FOR i IN 1 .. 10000000
+    LOOP
+        v_collection.EXTEND ;
+        SELECT DBMS_RANDOM.VALUE(1, 10)
+        BULK COLLECT INTO v_collection
+        FROM DUAL ;
+    END LOOP ;
+    
+    /*FOR i IN 1 .. 10000000
+    LOOP
+        SELECT DBMS_RANDOM.VALUE(1, 10)
+        INTO v_number 
+        FROM DUAL ;
+        
+        v_collection.EXTEND ;
+        v_collection(i) := v_number ;
+    END LOOP ;*/
+    
+    FORALL j IN v_collection.FIRST .. v_collection.LAST
+        INSERT INTO test_random(random_number)
+            VALUES (v_collection(j)) ;
+    
+    COMMIT ;
+         
+END ;
