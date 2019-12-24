@@ -1,6 +1,6 @@
 DECLARE
     v_rec sales%ROWTYPE ;
-    CURSOR v_cur(c_id IN NUMBER DEFAULT NULL) IS
+    CURSOR v_cur(c_id IN NUMBER) IS
         SELECT *
         FROM sales
         WHERE customer_id = c_id 
