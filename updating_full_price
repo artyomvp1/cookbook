@@ -1,0 +1,23 @@
+DECLARE
+    v_rec sales%ROWTYPE ;
+    CURSOR v_cur(c_id IN NUMBER DEFAULT NULL) IS
+        SELECT *
+        FROM sales
+        WHERE customer_id = c_id 
+        FOR UPDATE ; -- Don't forget to block a table!
+        
+BEGIN
+    OPEN v_cur ;
+    --
+    LOOP
+        FETCH v_cur INTO v_rec ;
+        EXIT WHEN v_cur%NOTFOUND ;
+            UPDATE sales
+            SET total_amount = NULL
+            WHERE CURRENT OF v_cur ;
+    END LOOP ;
+    --
+    CLOSE v_cur ;
+    --
+    COMMIT ;
+END ;
