@@ -19,9 +19,5 @@ BEGIN
         INSERT INTO trigger_log (log_id, event_date, username, table_name, pre_value, post_value, commentary)
             VALUES (trigger_log_sq.NEXTVAL, SYSDATE, v_user, 'CUSTOMER', NULL, NULL, 'Updating a new row') ;
     END IF ;
-    --
-EXCEPTION 
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE(SQLERRM) ;
         
 END ;
