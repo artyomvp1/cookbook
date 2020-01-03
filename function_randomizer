@@ -1,0 +1,12 @@
+create or replace FUNCTION randomizer (range_number IN NUMBER)
+    RETURN INTEGER 
+AS
+    v_number INTEGER ;
+
+BEGIN
+    SELECT DBMS_RANDOM.VALUE(1, range_number)
+    INTO v_number 
+    FROM DUAL ;
+    RETURN v_number ;
+
+END ;
