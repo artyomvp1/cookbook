@@ -3,7 +3,7 @@ AS
     v_user VARCHAR2(20) ;
     v_cur SYS_REFCURSOR ;
     v_rec all_objects%ROWTYPE ;
-    
+
 BEGIN
     SELECT user
     INTO v_user
@@ -13,7 +13,7 @@ BEGIN
         SELECT *
         FROM all_objects
         WHERE owner LIKE v_user
-        AND object_name LIKE 'TEST%' ;
+        AND (object_name LIKE 'TEST%' OR object_name LIKE 'TMP%') ;
     --
     LOOP
         FETCH v_cur INTO v_rec ;
