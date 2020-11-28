@@ -1,0 +1,13 @@
+CREATE VIEW vw_holiday_orders 
+AS
+    SELECT order_id,
+           order_date,
+           order_num,
+           customer_id, 
+           saler_id,
+           price_amount, 
+           customer_raiting
+    FROM sales 
+    WHERE sale_category = 'XR'
+    AND rating >= 4.5 
+    WITH CHECK OPTION ;
