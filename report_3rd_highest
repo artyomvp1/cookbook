@@ -1,7 +1,0 @@
-SELECT *
-FROM ( SELECT total_amount,
-              DENSE_RANK() OVER(ORDER BY total_amount DESC ) "RANKING"
-         FROM sales
-         )
-WHERE ranking = 3 
-;
