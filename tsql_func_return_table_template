@@ -1,0 +1,17 @@
+IF OBJECT_ID('dbo.test_function') IS NOT NULL
+DROP FUNCTION dbo.test_function ;
+
+GO
+
+CREATE FUNCTION dbo.test_function(@c_id INT) RETURNS TABLE
+AS
+
+RETURN
+SELECT sale_id, total_amount
+FROM sales
+WHERE customer_id = @c_id ;
+
+GO
+
+SELECT *
+FROM dbo.test_function(3) ;
