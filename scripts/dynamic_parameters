@@ -9,4 +9,4 @@ BEGIN
 		@params = N'@cid AS INT',
 		@cid = 5
 
-END 
+END ;
