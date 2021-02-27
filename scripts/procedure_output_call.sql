@@ -42,4 +42,3 @@ BEGIN
 	DEALLOCATE @cur
 
 END ;
-GO
