@@ -1,8 +1,8 @@
 ### SQL (TSQL, PL/SQL)
-* [MSS Calling procedure from a procedure]
-* [MSS Dynamic execution]
-* [ORA Recursion DML]
-* [ORA Job setup]
+* [MSS Calling procedure from a procedure](scripts/procedure_output_call.sql)
+* [MSS Dynamic execution](dynamic_parameters.sql)
+* [ORA Recursion DML](recursion_dml.sql)
+* [ORA Job setup](job.sql)
 * 
 ### Python
 * [List comprehension]
