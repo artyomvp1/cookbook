@@ -7,7 +7,7 @@
 * [Job setup](scripts/job.sql)
 
 ### Python
-* [List comprehension]
+* [List comprehension (+STRIP)](scripts/list_comprehension_1.ipynb)
 
 ### Pandas
 * [Wildcards and regular expressions](scripts/wildcard_regexp.ipynb)
