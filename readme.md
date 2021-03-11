@@ -13,4 +13,4 @@
 * [Wildcards and regular expressions](scripts/wildcard_regexp.ipynb)
 
 ### Matplotlib
-*
+* [Histogram](scripts/histogram.ipynb)
