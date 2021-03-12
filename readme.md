@@ -14,3 +14,4 @@
 
 ### Matplotlib
 * [Histogram](scripts/histogram.ipynb)
+* [Piechart](scripts/piechart.ipynb)
