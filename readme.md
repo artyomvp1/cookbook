@@ -13,5 +13,8 @@
 * [Wildcards and regular expressions](scripts/wildcard_regexp.ipynb)
 
 ### Matplotlib
+* [Plot]
+* [Bar]
 * [Histogram](scripts/histogram.ipynb)
 * [Piechart](scripts/piechart.ipynb)
+* [Scatter]
