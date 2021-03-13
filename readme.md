@@ -8,6 +8,9 @@
 
 ### Python
 * [List comprehension (+STRIP)](scripts/list_comprehension_1.ipynb)
+  #### Data Structures
+  * [Indexed Sequences](scripts/indexed_sequences.ipynb)
+  * [Lists]
 
 ### Pandas
 * [Wildcards and regular expressions](scripts/wildcard_regexp.ipynb)
