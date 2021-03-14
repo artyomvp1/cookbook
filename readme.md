@@ -10,8 +10,9 @@
 * [List comprehension (+STRIP)](scripts/list_comprehension_1.ipynb)
   #### Data Structures
   * [Indexed Sequences](scripts/indexed_sequences.ipynb)
-  * [Indexed Sequnces LIST](scripts/indexed_sequences_list.ipynb)
-  * [Indexed Sequences TUPLE]
+  * [List](scripts/indexed_sequences_list.ipynb)
+  * [Tuple]
+  * [Dictionary](scripts/indexed_sequences_dictionaries.ipynb)
 
 ### Pandas
 * [Wildcards and regular expressions](scripts/wildcard_regexp.ipynb)
