@@ -4,6 +4,7 @@
 
 ### PLSQL
 * [Recursion DML](scripts/recursion_dml.sql)
+* [Advanced Triggers](scripts/ora_triggers_advanced.sql)
 * [Job setup](scripts/job.sql)
 
 ### Python
