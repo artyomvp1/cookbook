@@ -8,3 +8,8 @@ BEGIN
                                enabled              => TRUE,
                                comments             => 'Testing dayly job') ;
 END ;
+
+-- DROP JOB
+BEGIN
+    DBMS_SCHEDULER.DROP_JOB(job_name => 'job_name') ;
+END ;
