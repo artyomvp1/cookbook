@@ -20,18 +20,10 @@
   * [Stack](scripts/ds_stack.ipynb)
   * [Queue](scripts/ds_queue.ipynb)
 
-### Pandas
-* [Wildcards and regular expressions](scripts/wildcard_regexp.ipynb)
-
 ### Matplotlib
 * [Plot]
 * [Bar]
 * [Histogram](scripts/histogram.ipynb)
-* [Piechart](scripts/piechart.ipynb)
+* [Piechart/Donut](matplotlib/pie_chart.ipynb)
 * [Scatter]
 
-### R
-*
-
-### Excel
-*
