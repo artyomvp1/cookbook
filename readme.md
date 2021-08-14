@@ -1,3 +1,7 @@
+### Data Analytics
+* [Data Analysis Process](data_analysis_process.pdf)
+* [Case study template PDF](case_study_template.pdf)
+
 ### T-SQL
 * [Calling procedure from a procedure](scripts/procedure_output_call.sql)
 * [Dynamic execution](scripts/dynamic_parameters.sql)
@@ -27,3 +31,8 @@
 * [Piechart/Donut](matplotlib/pie_chart.ipynb)
 * [Scatter]
 
+### R Cheat Sheets
+* [dplyr-tidyr](r/dplyr-tidyr.pdf)
+* [lubridate](r/lubridate.pdf)
+* [ggplot](r/ggplot.pdf)
+* [markdown](r/markdown.pdf)
