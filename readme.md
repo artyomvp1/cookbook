@@ -13,16 +13,13 @@
 * [Job setup](scripts/job.sql)
 
 ### Python
+* [Indexed Sequences](scripts/ds_indexed_sequences.ipynb)
+* [List](scripts/ds_list.ipynb)
 * [List Comprehension Overall](scripts/list_comprehension_overall.ipynb)
-* [List comprehension Advanced](scripts/list_comprehension_1.ipynb)
-
-  #### Data Structures
-  * [Indexed Sequences](scripts/ds_indexed_sequences.ipynb)
-  * [List](scripts/ds_list.ipynb)
-  * [Tuple & Set](scripts/ds_tuple_set.ipynb)
-  * [Dictionary](scripts/ds_dictionary.ipynb)
-  * [Stack](scripts/ds_stack.ipynb)
-  * [Queue](scripts/ds_queue.ipynb)
+* [Tuple & Set](scripts/ds_tuple_set.ipynb)
+* [Dictionary](scripts/ds_dictionary.ipynb)
+* [Stack](scripts/ds_stack.ipynb)
+* [Queue](scripts/ds_queue.ipynb)
 
 ### Matplotlib
 * [Plot]
