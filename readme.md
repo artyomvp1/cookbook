@@ -24,7 +24,7 @@
 ### Matplotlib
 * [Plot]
 * [Bar]
-* [Histogram](scripts/histogram.ipynb)
+* [Histogram](matplotlib/hist.ipynb)
 * [Piechart/Donut](matplotlib/pie_chart.ipynb)
 * [Scatter]
 
