@@ -23,7 +23,7 @@
 * [Queue](scripts/ds_queue.ipynb)
 
 ### Matplotlib
-* [Plot]
+* [Line/Multiple](matplotlib/line_multiple_wide.ipynb)
 * [Bar]
 * [Histogram](matplotlib/hist.ipynb)
 * [Piechart/Donut](matplotlib/pie_chart.ipynb)
