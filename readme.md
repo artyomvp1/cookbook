@@ -5,6 +5,7 @@
 ### T-SQL
 * [Calling procedure from a procedure](scripts/procedure_output_call.sql)
 * [Dynamic execution](scripts/dynamic_parameters.sql)
+* [Function returns a table](old/tsql_func_return_table_template)
 
 ### PLSQL
 * [Recursion DML](scripts/recursion_dml.sql)
