@@ -21,6 +21,7 @@
 * [Dictionary](scripts/ds_dictionary.ipynb)
 * [Stack](scripts/ds_stack.ipynb)
 * [Queue](scripts/ds_queue.ipynb)
+* [cxOracle](python/cx_oracle.py)
 
 ### Matplotlib
 * [Line/Multiple](matplotlib/line_multiple_wide.ipynb)
