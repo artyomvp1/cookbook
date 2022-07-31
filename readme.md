@@ -21,9 +21,11 @@
 * [Dictionary](scripts/ds_dictionary.ipynb)
 * [Stack](scripts/ds_stack.ipynb)
 * [Queue](scripts/ds_queue.ipynb)
-
+*
+* [Insertion Sort](python/insertion_sort.py)
+* [Merge Sort](python/merge_sort.py)
 * [Max Heap Sort](python/max_heap_sort.py)
-
+* 
 * [cxOracle](python/cx_oracle.py)
 
 ### Matplotlib
