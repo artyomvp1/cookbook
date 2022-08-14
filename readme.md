@@ -35,6 +35,9 @@
 * [Piechart/Donut](matplotlib/pie_chart.ipynb)
 * [Scatter]
 
+### Machine Learning
+* [Linear Regression](python/ml_basic_linear_regression.ipynb)
+
 ### R Cheat Sheets
 * [dplyr-tidyr](r/dplyr-tidyr.pdf)
 * [lubridate](r/lubridate.pdf)
