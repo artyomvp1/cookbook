@@ -1,4 +1,4 @@
-### Data Analytics
+### DATA ANALYTICS
 * [Data Analysis Process](data_analysis_process.pdf)
 * [Case study template PDF](case_study_template.pdf)
 
@@ -13,7 +13,7 @@
 * [Advanced Triggers](scripts/ora_triggers_advanced.sql)
 * [Job setup](scripts/job.sql)
 
-### Python
+### PYTHON
 * [Indexed Sequences](scripts/ds_indexed_sequences.ipynb)
 * [List](scripts/ds_list.ipynb)
 * [List Comprehension Overall](scripts/list_comprehension_overall.ipynb)
@@ -21,21 +21,22 @@
 * [Dictionary](scripts/ds_dictionary.ipynb)
 * [Stack](scripts/ds_stack.ipynb)
 * [Queue](scripts/ds_queue.ipynb)
-*
+-
 * [Insertion Sort](python/insertion_sort.py)
 * [Merge Sort](python/merge_sort.py)
 * [Max Heap Sort](python/max_heap_sort.py)
-* 
+-
 * [cxOracle](python/cx_oracle.py)
 
-### Matplotlib
+### MATPLOTLIB
 * [Line/Multiple](matplotlib/line_multiple_wide.ipynb)
 * [Bar]
 * [Histogram](matplotlib/hist.ipynb)
 * [Piechart/Donut](matplotlib/pie_chart.ipynb)
 * [Scatter]
+* [Trend Curve](matplotlib/trend_curve.ipynb)
 
-### Machine Learning
+### MACHINE LEARNING
 * [Linear Regression](python/ml_basic_linear_regression.ipynb)
 
 ### R Cheat Sheets
