@@ -10,6 +10,3 @@ def insertion(sequence):
             sequence[prev_min_index+1] = current_value
         
     return sequence
-
-
-# Explanation TBD
