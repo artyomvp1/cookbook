@@ -23,6 +23,7 @@
 * [Stack](scripts/ds_stack.ipynb)
 * [Queue](scripts/ds_queue.ipynb)
 ##### Sorting Algorithms
+* [Sort Bubble](python/sort_algo_bubble.py)
 * [Sort Insertion](python/sort_algo_insertion.py)
 * [Sort Quick](python/sort_algo_quick.py)
 * [Sort Merge](python/sort_algo_merge.py)
