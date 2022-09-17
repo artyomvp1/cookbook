@@ -42,6 +42,7 @@
 
 ### MACHINE LEARNING
 * [Linear Regression](python/ml_basic_linear_regression.ipynb)
+* [Classification](python/ml_basic_classification.ipynb)
 
 ### R Cheat Sheets
 * [dplyr-tidyr](r/dplyr-tidyr.pdf)
