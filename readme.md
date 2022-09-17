@@ -14,6 +14,7 @@
 * [Job setup](scripts/job.sql)
 
 ### PYTHON
+##### Data Structures
 * [Indexed Sequences](scripts/ds_indexed_sequences.ipynb)
 * [List](scripts/ds_list.ipynb)
 * [List Comprehension Overall](scripts/list_comprehension_overall.ipynb)
@@ -21,11 +22,12 @@
 * [Dictionary](scripts/ds_dictionary.ipynb)
 * [Stack](scripts/ds_stack.ipynb)
 * [Queue](scripts/ds_queue.ipynb)
--
-* [Insertion Sort](python/insertion_sort.py)
-* [Merge Sort](python/merge_sort.py)
-* [Max Heap Sort](python/max_heap_sort.py)
--
+##### Sorting Algorithms
+* [Sort Insertion](python/sort_algo_insertion.py)
+* [Sort Quick](python/sort_algo_quick.py)
+* [Sort Merge](python/sort_algo_merge.py)
+* [Sort Max Heap](python/sort_algo_max_heap.py)
+##### Databases
 * [cxOracle](python/cx_oracle.py)
 
 ### MATPLOTLIB
