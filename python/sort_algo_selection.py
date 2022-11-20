@@ -1,3 +1,5 @@
+# https://www.youtube.com/watch?v=g-PGLbMth_g
+
 def selection(sequence):
     
     for i in range(0, len(sequence)):
