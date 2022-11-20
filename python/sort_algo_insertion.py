@@ -1,3 +1,20 @@
+# v1
+def insertion(sequence):
+    
+    for i in range(1, len(sequence)):
+        current_value = sequence[i]
+        current_position = i
+        
+        while current_position > 0 and sequence[current_position-1] > current_value:
+            sequence[current_position] = sequence[current_position-1]
+            current_position -=1
+        
+        sequence[current_position] = current_value
+    
+    return sequence
+
+
+# v2
 def insertion(sequence):
     
     for i in range(0, len(sequence)):
