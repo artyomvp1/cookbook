@@ -20,14 +20,14 @@ def merge(sequence):
                 k += 1
                 j += 1
 
-        if i < len(left):
+        while i < len(left):
             sequence[k] = left[i]
             k += 1
             i += 1
 
-        if j < len(right):
+        while j < len(right):
             sequence[k] = right[j]
             k += 1
             j += 1
 
-        return sequence
+    return sequence
