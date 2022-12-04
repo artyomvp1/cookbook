@@ -9,5 +9,5 @@ def quick(sequence):
     more = [j for j in sequence if j > pivot_point]
     midd = [k for k in sequence if k == pivot_point]
     
-    return quick(less) + midd + quick(more
-                                      
+    return quick(less) + midd + quick(more)
+                                     
