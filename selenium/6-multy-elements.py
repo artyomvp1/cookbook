@@ -14,5 +14,4 @@ print(len(sequence))  # prints it
 for i in sequence:
     print(i.text)  # print the content of the tag
 
-
 driver.close()
