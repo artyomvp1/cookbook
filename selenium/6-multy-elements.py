@@ -2,7 +2,9 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-
+"""
+FIND_ELEMENTS method finds multiple elements and put them in a list so you can itterate.
+"""
 driver = webdriver.Chrome()
 driver.get('https://www.yatra.com')
 driver.maximize_window()
