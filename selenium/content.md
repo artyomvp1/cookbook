@@ -9,4 +9,12 @@
 * [Attributes and values of web elements](8-attribute-value.py)
 * [Web element state and availability](9-webelement-state.py)
 * [Hidden web elements](10-hidden-elements.py)
-* 
+* [Checkboxes](11-checkbox.py)
+* [Radio-buttons](12-radio-button.py)
+* [Dropdowns](13-dropdown.py)
+* [Multisection dropdowns](13-multiselection-dropdown.py)
+* [Auto-suggestion](14-auto-suggestion.py)
+* [Calendar](15-calendar.py)
+* [Screenshot](16-screenshot.py)
+* [Multi-tab-windows](17-multi-tab-window.py)
+* [iFrames](18-iframes.py)
