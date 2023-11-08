@@ -62,7 +62,10 @@
  
 ---
 
-### [WEB SCRAPING](selenium/content.md)
+### WEB SCRAPING
+  * [Selenium](selenium/content.md)
+  * [PyTest](pytest/content.md)
+
 
 ---
 
