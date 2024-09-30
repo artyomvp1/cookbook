@@ -41,6 +41,9 @@
 ##### Databases
   * [cxOracle](python/cx_oracle.py)
 
+##### Others
+  * [Email (SMTP)](python/email_smtp.py)
+
 ---
 
 ### MATPLOTLIB
