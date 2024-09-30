@@ -8,14 +8,14 @@ def send_email(body_data):
     
     """
     # Email configuration
-    username = 'artyom.pak@blabla.com'  # << Sending E-mail Account
+    username = 'blabla.com'  # << Sending E-mail Account
     password = 'XxXxXx'  # << PW for the Sending E-mail Account
-    smtp_server = 'mail.nike.com'
+    smtp_server = 'mail.YOURDOMAIN.com' # nike
     smtp_port = 587
 
     # Create the email
     sender_email = username
-    receiver_email = ['Artyom.Pak@nike.com', '']
+    receiver_email = ['blabla@bla.com', '']
     subject = 'RITM3355837 | TASK4014435 - Testing w/Importance'
     body = body_data
 
