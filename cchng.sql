@@ -1,33 +1,49 @@
--- 1. SCALLER
-SELECT *
-FROM business_sales 
-WHERE customer_id IN (SELECT customer_id
-                      FROM business_customer
-                      WHERE service_plan = 'ELITE') 
-;
-
+-- SINGLE ROW
 SELECT *
 FROM business_sales
-WHERE item_id IN (SELECT item_id
-                  FROM business_item
-                  WHERE price = (SELECT MIN(price)
-                                 FROM business_item 
-                                 )
-                 )
-;
+WHERE customer_id = (SELECT customer_id -- this subquery returns single value
+                     FROM customer
+                     WHERE last_name = 'JOHNSON'
+                     ) ;
 
-SELECT customer_id, SUM(total_price)
-FROM business_sales 
-GROUP BY customer_id
-HAVING SUM(total_price) > 3000;
+-- MULTI-ROW 
+SELECT *
+FROM business_sales
+WHERE customer_id IN (SELECT customer_id -- this subquery returns multiple values
+                      FROM business_customer
+                      WHERE service_plan = 'ELITE'
+                      ) ;
 
-
-
--- 2. CORRELATED
+-- CORRELATED
+-- Who overdrafted?
 SELECT *
 FROM business_customer bc
-WHERE EXISTS (SELECT *
-              FROM business_sales bs
-              WHERE bs.customer_id = bc.customer_id
-              )
+WHERE deposit < (SELECT SUM(total_price)
+                 FROM business_sales bs
+                 WHERE bs.customer_id = bc.customer_id);
 
+
+-- NESTED (subquery in another subquery)
+SELECT *
+FROM business_customer 
+WHERE customer_id IN (SELECT customer_id
+                      FROM business_sales
+                      WHERE item_id = (SELECT item_id
+                                       FROM business_item
+                                       WHERE item_name = 'FOOTWEAR'
+                                       )
+                      );
+
+-- EXISTS/NOT
+SELECT *
+FROM business_customer bc
+WHERE NOT EXISTS (SELECT *
+                  FROM business_sales bs
+                  WHERE bs.customer_id = bc.customer_id
+                  ) ;
+                  
+-- ALL/ANY
+SELECT *
+FROM business_sales 
+WHERE total_price > ALL (SELECT AVG(total_price)
+                         FROM business_sales);
