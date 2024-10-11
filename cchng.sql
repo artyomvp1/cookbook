@@ -44,6 +44,7 @@ WHERE NOT EXISTS (SELECT *
                   
 -- ALL/ANY
 SELECT *
-FROM business_sales 
-WHERE total_price > ALL (SELECT AVG(total_price)
-                         FROM business_sales);
+FROM business_history
+WHERE price > ALL (SELECT total_price
+                   FROM business_sales
+                   ) ;
