@@ -1,0 +1,50 @@
+NF main goal is to remove redundancy
+
+-- FIRST NL FORM - Atomocity
+
+Atomicity: Each column contains only atomic (indivisible) values.
+Uniqueness of columns: Each column contains unique values or is allowed to contain duplicate values, but no composite or multi-valued attributes are allowed.
+Uniqueness of rows: Each row must be unique. No two rows should be identical.
+Single value per cell: No repeating groups or arrays are allowed within a single column.
+
+Solution: 
+Remove multivalued attributes: Make sure that each attribute contains only a single value.
+
+SELECT *
+FROM nf1_incorrect 
+--WHERE data LIKE '%SCOTT%'
+;
+
+SELECT *
+FROM nf1_correct
+--WHERE first_name LIKE '%SCOTT%'
+;
+
+-- SECOND NL FORM - REDUCING PARTIAL DEPENDENCY
+
+
+-- PK is composite
+-- Non-key attributes: StudentName, CourseName, Instructor.
+-- StudentName depends only on StudentID, not on the entire composite key (StudentID, CourseID).
+-- CourseName and Instructor depend only on CourseID
+SELECT *
+FROM student_courses_incorrect ;
+
+Solution
+Divide the original table into 2 by Splitting a table to decude partial depen
+SELECT * FROM students ;
+SELECT * FROM courses ;
+SELECT * FROM student_courses_correct ;
+
+
+-- THIRD NL FORM removing transitive dependencies.
+SELECT *
+FROM business_sales_incorrect 
+ORDER BY 1
+;
+
+SOLUTION
+To remove transitive dependencies, we need to split the table into smaller
+SELECT * FROM business_item; 
+SELECT * FROM business_customer; 
+SELECT * FROM business_sales; 
