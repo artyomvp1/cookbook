@@ -38,6 +38,8 @@ SELECT * FROM student_courses_correct ;
 
 
 -- THIRD NL FORM removing transitive dependencies.
+-- Related to non primary key
+
 SELECT *
 FROM business_sales_incorrect 
 ORDER BY 1
