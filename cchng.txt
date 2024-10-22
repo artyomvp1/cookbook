@@ -1,5 +1,19 @@
 SET SERVEROUTPUT ON ;
 
+CREATE OR REPLACE FUNCTION test_function RETURN NUMBER
+AS
+    v_result NUMBER ;
+    
+BEGIN
+    SELECT MAX(total_amount)
+    INTO v_result
+    FROM sales ;
+    
+    RETURN v_result ;
+    
+END ;
+/
+
 
 DECLARE
     v_customer NUMBER ;
