@@ -1,101 +1,18 @@
-/* 
-ONE TO MANY
-Signle record in one table related to multiple tables in another.
-One author can write multiple books
-
-          Book "A"
-        /
-Author 1 - Book "B"
-        \ 
-          Book "C"
+SET SERVEROUTPUT ON ;
 
 
-Author 2 - Book "D"
-        \
-          Book "E"
-*/
-
-SELECT * FROM authors ;
-SELECT * FROM books ;
-
-SELECT *
-FROM authors 
-LEFT JOIN books ON books.author_id = authors.author_id
-WHERE authors.author_id = 1
-;
-
-
-/*
-MANY TO ONE
-Opposite to one to many.
-
-Each student attends ONE school but one school can have many students
-
-
-Student 1
-          \
-Student 2 - School 1
-          /   
-Student 3     
-*/
-
-SELECT * FROM schools ;
-SELECT * FROM scholar ;
-
-SELECT *
-FROM scholar
-LEFT JOIN schools ON scholar.school_id = schools.school_Id
-ORDER BY 1;
-
-/*
-MANY TO MANY it is a combination of "MANY TO ONE" + "ONE TO MANY"
-*/
-
-Table 1 --> JUNCTION TABLE <-- Table 2
-
-
---- JOINs 
-
--- LEFT JOIN
-SELECT *
-FROM emp 
-LEFT JOIN departments ON departments.department_id = emp.department_id 
-ORDER BY 1
-;
-
--- RIGHT JOIN
-SELECT *
-FROM emp 
-RIGHT JOIN departments ON departments.department_id = emp.department_id 
-ORDER BY 5
-;
-
--- LEFT JOIN
-SELECT *
-FROM emp 
-INNER JOIN departments ON departments.department_id = emp.department_id 
-ORDER BY 1
-;
-
--- OUTER JOIN
-SELECT *
-FROM emp 
-FULL JOIN departments ON departments.department_id = emp.department_id 
-ORDER BY 1
-;
-
--- SELF JOIN
-SELECT e1.*,
-       e2.name
-FROM emp_manager e1
-LEFT JOIN emp_manager e2 ON e1.manager_id = e2.employee_id
-ORDER BY 1;
-
--- CROSS JOIN
-SELECT * FROM table_1 ;
-SELECT * FROM table_2 ;
-
-SELECT *
-FROM table_1
-CROSS JOIN table_2
-ORDER BY 1 ;
+DECLARE
+    v_customer NUMBER ;
+    v_spent NUMBER ;
+    
+BEGIN
+    SELECT customer_id, SUM(total_amount) AS spent
+    INTO v_customer, v_spent
+    FROM sales 
+    GROUP BY customer_id
+    ORDER BY 2 DESC 
+    FETCH FIRST ROW ONLY
+    ;
+    
+    DBMS_OUTPUT.PUT_LINE (v_customer) ;
+END ;
