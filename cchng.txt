@@ -1,32 +1,70 @@
-SET SERVEROUTPUT ON ;
 
-CREATE OR REPLACE FUNCTION test_function RETURN NUMBER
-AS
-    v_result NUMBER ;
-    
-BEGIN
-    SELECT MAX(total_amount)
-    INTO v_result
-    FROM sales ;
-    
-    RETURN v_result ;
-    
-END ;
-/
+-- 1
+CREATE TABLE education 
+(
+EducationFieldId NUMBER PRIMARY KEY,
+EducationField VARCHAR2(100)
+) ;
 
+-- 2
+CREATE TABLE job
+(
+JobId NUMBER PRIMARY KEY,
+JobRole VARCHAR2(100),
+StandardHours NUMBER
+) ;
 
-DECLARE
-    v_customer NUMBER ;
-    v_spent NUMBER ;
-    
-BEGIN
-    SELECT customer_id, SUM(total_amount) AS spent
-    INTO v_customer, v_spent
-    FROM sales 
-    GROUP BY customer_id
-    ORDER BY 2 DESC 
-    FETCH FIRST ROW ONLY
-    ;
-    
-    DBMS_OUTPUT.PUT_LINE (v_customer) ;
-END ;
+-- 3
+CREATE TABLE department
+(
+DepartmentId NUMBER PRIMARY KEY,
+Department VARCHAR2(100)
+) ;
+
+-- 4
+CREATE TABLE travel
+(
+BusinessTravelId NUMBER PRIMARY KEY,
+BusinessTravel VARCHAR2(100)
+) ;
+
+-- 5
+CREATE TABLE employee 
+(
+EmployeeNumber NUMBER PRIMARY KEY,
+Age NUMBER,
+Gender VARCHAR2(10),
+MaritalStatus VARCHAR2(10),
+Over18 CHAR(1),
+DepartmentId NUMBER,  -- FK,
+EducationYears NUMBER,
+EducationFieldId NUMBER,  -- FK
+DistanceFromHome NUMBER,
+EnvironmentSatisfaction NUMBER,
+RelationshipSatisfaction NUMBER, 
+OverTime CHAR(1),
+DailyRate NUMBER,
+HourlyRate NUMBER,
+JobId NUMBER,  -- FK
+JobLevel NUMBER,
+JobSatisfaction NUMBER,
+JobInvolvement NUMBER,
+MonthlyIncome NUMBER,
+MonthlyRate NUMBER,
+NumCompaniesWorked NUMBER,
+YearsWithCurrManager NUMBER,
+YearsSinceLastPromotion NUMBER,
+YearsInCurrentRole NUMBER,
+YearsAtCompany NUMBER,
+TrainingTimesLastYear NUMBER,
+TotalWorkingYears NUMBER,
+BusinessTravelID NUMBER, -- FK
+StockOptionLevel NUMBER,
+PerformanceRating NUMBER,
+PercentSalaryHike NUMBER,
+CONSTRAINT FK_DepartmentId FOREIGN KEY (DepartmentId) REFERENCES department (DepartmentId),
+CONSTRAINT FK_EducationFieldId FOREIGN KEY (EducationFieldId) REFERENCES education (EducationFieldId),
+CONSTRAINT FK_JobId FOREIGN KEY (JobId) REFERENCES job (JobId),
+CONSTRAINT FK_BusinessTravelID FOREIGN KEY (BusinessTravelID) REFERENCES travel (BusinessTravelID)
+) ;
+
