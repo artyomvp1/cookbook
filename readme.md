@@ -4,10 +4,6 @@
 
 ---
 
-$$$ SPARK SQL
-* Date
----
-
 ### T-SQL
 * [Calling procedure from a procedure](scripts/procedure_output_call.sql)
 * [Dynamic execution](scripts/dynamic_parameters.sql)
