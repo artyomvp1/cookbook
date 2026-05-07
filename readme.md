@@ -83,8 +83,3 @@
 * [lubridate](r/lubridate.pdf)
 * [ggplot](r/ggplot.pdf)
 * [markdown](r/markdown.pdf)
-
----
-
-UNIX Terminal
-*
