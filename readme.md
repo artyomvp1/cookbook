@@ -17,9 +17,6 @@
 * [Advanced Triggers](scripts/ora_triggers_advanced.sql)
 * [Job setup](scripts/job.sql)
 
-##### DBMS Package
-  * [DBMS_XMLGEN](oracle/dbms_xmlgen.sql)
-  * [DBMS_OUTPUT]
 ---
 
 ### PYTHON
