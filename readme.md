@@ -50,6 +50,7 @@
 * [Piechart/Donut](matplotlib/pie_chart.ipynb)
 * [Scatter]
 * [Trend Curve](matplotlib/trend_curve.ipynb)
+* [Text and Bar](matplotlib/text_inside_over_bars.ipynb)
 
 ---
 
