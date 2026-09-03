@@ -2,6 +2,7 @@
 * **System time is UTC !**
 * [SQL to PY-dataframe](databricks/sql_dataframe_to_python.ipynb)
 * date_format(doms_atg_crtdttm_pst, 'dd-MM-yy HH:mm:ss')
+* INTERVAL : created_dttm >= CURRENT_TIMESTAMP - INTERVAL 6 HOURS
 ---
 
 ### DATA ANALYTICS
