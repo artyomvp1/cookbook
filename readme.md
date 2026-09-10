@@ -24,7 +24,7 @@
 * [Calling a Proc+OUTPUT](scripts/ora_calling_proc.sql)
 * [Advanced Triggers](scripts/ora_triggers_advanced.sql)
 * [Job setup](scripts/job.sql)
-
+* [REGEX JSON FETCH] : REGEXP_SUBSTR(msg_line_text,'"serviceLevelCode":"([^"]+)"',1,1,NULL,1)
 ---
 
 ### PYTHON
