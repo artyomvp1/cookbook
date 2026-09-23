@@ -5,6 +5,7 @@
 * [Weekend Between](databricks/weekends_between.sql)  
 * date_format(doms_atg_crtdttm_pst, 'dd-MM-yy HH:mm:ss')
 * INTERVAL : created_dttm >= CURRENT_TIMESTAMP - INTERVAL 6 HOURS
+* [Date](databricks/date_manipulation.sql)
 ---
 
 ### DATA ANALYTICS
